@@ -3,6 +3,8 @@ import '../widgets/profile_header.dart';
 import '../widgets/profile_statistics.dart';
 import '../widgets/profile_action_buttons.dart';
 import '../utils/app_styles.dart';
+import '../widgets/info_card.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -50,6 +52,7 @@ class ProfileScreen extends StatelessWidget {
                 ProfileHeader(),
                 ProfileStatistics(),
                 ProfileActionButtons(),
+                info_card(),
               ],
             ),
           ),
