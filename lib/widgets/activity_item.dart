@@ -39,30 +39,37 @@ class _ActivityItemState extends State<ActivityItem> {
       itemCount: activities.length,
       itemBuilder: (context, index) {
         final item = activities[index];
-        return ListTile(
-          leading: buildIconButton(
-            icon: item['icon'],
-            onPressed: () {},
+        return Container(
+          decoration: BoxDecoration(
+            color: AppColors.iconbuttonIcon
           ),
-          title: Text(
-            item['title'],
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              color: AppColors.text,
+          child: ListTile(
+            
+            
+            leading: buildIconButton(
+              icon: item['icon'],
+              onPressed: () {},
             ),
-          ),
-          subtitle: Text(
-            item['description'],
-            style: const TextStyle(color: AppColors.secondaryText),
-          ),
-          trailing: Text(
-            item['time'],
-            style: const TextStyle(
-              color: AppColors.secondaryText,
-              fontSize: 12,
+            title: Text(
+              item['title'],
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: AppColors.text,
+              ),
             ),
+            subtitle: Text(
+              item['description'],
+              style: const TextStyle(color: AppColors.secondaryText),
+            ),
+            trailing: Text(
+              item['time'],
+              style: const TextStyle(
+                color: AppColors.secondaryText,
+                fontSize: 12,
+              ),
+            ),
+            onTap: () {},
           ),
-          onTap: () {},
         );
       },
     );

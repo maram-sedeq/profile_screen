@@ -54,13 +54,12 @@ class ProfileScreen extends StatelessWidget {
                 const ProfileStatistics(),
                 const ProfileActionButtons(),
                 const info_card(),
-               Positioned(
-                left: 30,
-                child: 
-              buildHeaderText('Recent Activities'),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(left:20,right:300, bottom: 8.0),          
+                  child: buildHeaderText('Recent Activities'),
+                ),
                const ActivityItem(),
-               const BottomNavigation()
+              
               ],
             ),
           ),
@@ -68,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
       ),
 
 
-      //bottomNavigationBar: const BottomNavigation(),
+         bottomNavigationBar: const BottomNavigation(),
     );
   }
 }

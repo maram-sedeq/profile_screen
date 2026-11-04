@@ -64,6 +64,6 @@ Widget buildIconButton({
 Widget buildHeaderText(String text) {
   return Text(
     text,
-    style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500, color: AppColors.text),
+    style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold, color: AppColors.text),
   );
 }
