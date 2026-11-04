@@ -4,6 +4,8 @@ import '../widgets/profile_statistics.dart';
 import '../widgets/profile_action_buttons.dart';
 import '../utils/app_styles.dart';
 import '../widgets/info_card.dart';
+import '../widgets/activity_item.dart';
+import '../widgets/bottom_navigation.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -18,12 +20,11 @@ class ProfileScreen extends StatelessWidget {
       Padding(
     padding: const EdgeInsets.all(8.0), 
     child: buildIconButton(
+
       icon: Icons.arrow_back,
-      //size: 40, 
-      //iconSize: 20,
       onPressed: () {
-        //Navigator.pop(context);
       },
+
     ),
   ),
       actions: [
@@ -48,16 +49,24 @@ class ProfileScreen extends StatelessWidget {
             padding: const EdgeInsets.all(16),
 
             child: Column(
-              children: const [
-                ProfileHeader(),
-                ProfileStatistics(),
-                ProfileActionButtons(),
-                info_card(),
+              children: [
+                const ProfileHeader(),
+                const ProfileStatistics(),
+                const ProfileActionButtons(),
+                const info_card(),
+               Positioned(
+                left: 30,
+                child: 
+              buildHeaderText('Recent Activities'),
+              ),
+               const ActivityItem(),
+               const BottomNavigation()
               ],
             ),
           ),
         ),
       ),
+
 
       //bottomNavigationBar: const BottomNavigation(),
     );

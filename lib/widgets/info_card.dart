@@ -9,10 +9,34 @@ class info_card extends StatefulWidget {
 }
 
 class _info_cardState extends State<info_card> {
+  final List<Map<String, dynamic>> cardItem = [
+    {
+        'title': 'Wallet',
+        'icon': buildIconButton(
+            icon: Icons.account_balance_wallet,
+            onPressed: () {
+              // Handle wallet button press
+            },
+          ),
+        'description': '24.500.000'
+    },
+    {
+        'title': 'Insights',
+        'icon': buildIconButton(
+            icon: Icons.bar_chart,
+            onPressed: () {
+             
+            },
+          ),
+        'description': '12K Views'
+    }
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200, // حدد ارتفاعاً مناسباً للشبكة (أو استخدم shrinkWrap: true إذا كانت داخل Column)
+      height: 200, 
       child: GridView.builder(
         padding: const EdgeInsets.all(10), 
         
@@ -23,32 +47,30 @@ class _info_cardState extends State<info_card> {
           childAspectRatio: 1.5, 
         ),
         
-        itemCount: 2, 
+        itemCount: cardItem.length, 
         
         itemBuilder: (context, index) {
+          final item = cardItem[index];
           return Container(
             decoration: BoxDecoration(
-              color: AppColors.primary, 
+              color: AppColors.cardBackground, 
               borderRadius: BorderRadius.circular(15), 
             ),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  buildIconButton(
-                    icon: Icons.info,
-                    onPressed: () {
-                    },
+                  item['icon'],
+                    
+                  SizedBox(height: 5),
+                  Text(
+                    item['title'],
+                    style: TextStyle(color: AppColors.text, fontSize: 18),
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'Info Card',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    'Details here',
-                    style: TextStyle(color: Colors.white70, fontSize: 14),
+                    item['description'],
+                    style: TextStyle(color: AppColors.secondaryText, fontSize: 14),
                   ),
                 ],
               ),

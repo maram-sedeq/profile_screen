@@ -12,6 +12,7 @@ class AppColors {
   static const Color buttonText = Colors.white;
   static const Color profileline = Color.fromARGB(255, 0, 173, 17);
   static const Color line = Color(0xFF888888);
+  static const Color cardBackground = Colors.white;
 }
 
 Widget buildDividerLine({
@@ -58,5 +59,11 @@ Widget buildIconButton({
         size: iconSize,
       ),
     ),
+  );
+}
+Widget buildHeaderText(String text) {
+  return Text(
+    text,
+    style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500, color: AppColors.text),
   );
 }
