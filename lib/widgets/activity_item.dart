@@ -40,11 +40,13 @@ class _ActivityItemState extends State<ActivityItem> {
       itemBuilder: (context, index) {
         final item = activities[index];
         return Container(
+          margin: EdgeInsets.all(2),
           decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
             color: AppColors.iconbuttonIcon
           ),
           child: ListTile(
-            
+
             
             leading: buildIconButton(
               icon: item['icon'],

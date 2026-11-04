@@ -21,6 +21,7 @@ int _currentIndex = 0;
    @override
   Widget build(BuildContext context) {
     return  BottomNavigationBar(
+    
       backgroundColor: AppColors.primary,
         currentIndex: _currentIndex,
         onTap: (index) {
